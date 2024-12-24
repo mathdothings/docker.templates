@@ -16,7 +16,7 @@
 
 #
 
-5. If composer is working properly, create a new laravel app, running `composer create-project laravel/laravel <project-name>`, <b><project-name></b> is the name of your project
+5. If composer is working properly, create a new laravel app, running `composer create-project laravel/laravel <project-name>`, <b>\<project-name></b> is your project name
 
 #
 
