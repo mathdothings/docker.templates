@@ -1,0 +1,65 @@
+services:
+    # PHP
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: php:8.4-fpm-alpine
+        container_name: app
+        restart: unless-stopped
+        tty: true
+        ports:
+            - "8000:8000" 
+        environment:
+            SERVICE_NAME: app
+            SERVICE_TAGS: dev
+        working_dir: /var/www
+        volumes:
+          - ./:/var/www
+          - ./local.ini:/usr/local/etc/php/conf.d/local.ini
+        networks:
+            - app-network
+
+    # Nginx
+    webserver:
+        image: nginx:alpine
+        container_name: webserver
+        restart: unless-stopped
+        tty: true
+        ports:
+            - '80:80'
+            - '443:443'
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+        volumes:
+          - ./:/var/www
+          - ./nginx/conf.d/:/etc/nginx/conf.d/
+        networks:
+            - app-network
+
+    # PostgreSQL
+    db:
+        image: postgres:latest
+        container_name: db
+        restart: unless-stopped
+        tty: true
+        ports:
+            - 5432:5432
+        environment:
+          - POSTGRES_HOST=localhost
+          - POSTGRES_USER=example
+          - POSTGRES_PASSWORD=example
+          - POSTGRES_DB=example
+        volumes:
+        - pgdata:/var/lib/postgresql/data
+        networks:
+            - app-network
+
+# Docker Networks
+networks:
+    app-network:
+        driver: bridge
+
+volumes:
+  pgdata:
+    driver: local
