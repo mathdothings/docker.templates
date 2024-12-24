@@ -1,29 +1,38 @@
-# Instrunctions to run Laravel template
+# Instructions to Run the Laravel Template
 
-1. Clone the Laravel template
+1. **Clone the Laravel Template**  
+   Clone the repository of the Laravel template to your local machine.
 
-#
+---
 
-2. run `docker compose up -d --build` if you're running the containers for the first time to build <b>images</b>
+2. **Build Docker Images**  
+   Run `docker compose up -d --build` if you are setting up the containers for the first time. This command will build the required **Docker images**.
 
-#
+---
 
-3. run `docker compose up -d` if you want to just start containers using <b>existing</b> images
+3. **Start Existing Containers**  
+   To start the containers using **pre-built images**, run `docker compose up -d`.
 
-#
+---
 
-4. Check <b>composer</b> version, running `composer --version`
+4. **Check Composer Version**  
+   Verify that **Composer** is installed correctly by running `composer --version`.
 
-#
+---
 
-5. If composer is working properly, create a new laravel app, running `composer create-project laravel/laravel <project-name>`, <b>\<project-name></b> is your project name
+5. **Create a New Laravel Project**  
+   If Composer is working properly, create a new Laravel application by executing `composer create-project laravel/laravel <project-name>`. Replace `<project-name>` with your desired project name.
 
-#
+---
 
-6. run `cd <project-name>` and then run `php artisan serve --host=0.0.0.0`
+6. **Navigate to the Project Directory and Start the Server**  
+   Change into the project directory by running `cd <project-name>`, and then start the Laravel development server using `php artisan serve --host=0.0.0.0`.
 
-#
+---
 
-7. Click que link showing up on your terminal or just access `localhost:8000`
+7. **Access the Application**  
+   Open the link displayed in your terminal or visit `localhost:8000` in your browser to view the application.
 
-### Done
+---
+
+### You’re all set up!
