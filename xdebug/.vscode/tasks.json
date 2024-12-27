@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start with XDebug",
+            "type": "shell",
+            "command": ["docker compose up -d"],
+            "presentation": {
+                "reveal": "never",
+                "clear": true,
+                "close": true
+            }
+        },
+        {
+            "label": "Stop with XDebug",
+            "type": "shell",
+            "command": ["docker compose down"],
+            "presentation": {
+                "reveal": "never",
+                "clear": true,
+                "close": true
+            }
+        }
+    ]
+}

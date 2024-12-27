@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Listen for Xdebug",
+            "type": "php",
+            "request": "launch",
+            "preLaunchTask": "Start with XDebug",
+            "postDebugTask": "Stop with XDebug",
+            "port": 9003,
+            "cwd": "${workspaceRoot}/src",
+            "pathMappings": {
+                "/var/www/html": "${workspaceRoot}/src"
+            }
+        }
+    ]
+}
