@@ -1,9 +1,10 @@
 <?php
-$host = 'db'; // This should be the postgre container's name on docker
-$port = '5432';
-$dbname = 'example';
-$user = 'example';
-$password = 'example';
+
+$host = getenv('POSTGRES_CONTAINER');
+$port = getenv('POSTGRES_PORT');
+$dbname = getenv('POSTGRES_DB');
+$user = getenv('POSTGRES_USER');
+$password = getenv('POSTGRES_PASSWORD');
 
 $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
 
